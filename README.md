@@ -2,66 +2,61 @@
 The purpose of this repo is to scrape or download the following GDP and CPI data into R.  
 
 Data Sets Produced 
-  - US GDP
-  - HI GDP
-  - US CPI
-  - HI CPI
+  - GDP National
+  - GDP Hawaii
+  - CPI National
+  - CPI Regional (West) 
+  - CPI Hawaii
 
-GDP data is provided by 
-  - https://fred.stlouisfed.org
+*Directory Structure*
+  - Run all code by opening to the `Inflation_Adj.Rproj`.  This will help preserve the folder structure when saving and sourcing data and figures. 
+  - There are 3 folders in the working directory 
+    1. code - Two folders 
+      a. produce data sets- This folder holds all scripts needed to extract, clean, and save the GDP and CPI data 
+      b. supplementary code- The files in the folder
+        - compiling_ts_graph.R - Create the final time series graph 
+        - hlprfnc_adjusting_CPI.R - Function to calculate the CPI adjuster 
+        - example_calc_adj_cpi.R - An example of how to use the CPI adjuster
+    3. data - House all final data sets
+    5. figures - House the final time series graph
 
-CPI data is provided by 
-  - https://beta.bls.gov/dataQuery/find?fq=survey:%5Bcu%5D&s=popularity:D
-    - "All Items US City Average, All Urban Consumers, Not Seasonally Adjusted" 
-    - 2000 to present.
+
+*About the Data*
+GDP National 
+  - https://fred.stlouisfed.org/series/GDPDEF  
+  - Data Range: 1947 to present 
+  - Measured quarterly 
+
+GDP Hawaii 
+  - https://fred.stlouisfed.org/series/HINGSP
+  - Data Range: 1997 to present 
+  - Measured quarterly 
+
+CPI National 
+  - https://beta.bls.gov/dataViewer/view/timeseries/CUUR0000SA0
+  - Data Range: 2000 to present
+  - Measured annual (pre 2018), bimonthly (2018 and current) 
+
+CPI Regional 
+  - https://data.bls.gov/timeseries/CUUR0400SA0,CUUS0400SA0
+  - Data Range: 2011 to present 
+  - Measured monthly 
+
+CPI Hawaii 
+  - https://data.bls.gov/timeseries/CUURS49FSA0 
+  - Data Range: 2011 to present (See *Notes* for obtaining data pre-2011) 
+  - Measured annual (pre 2018), bimonthly (2018 and current) 
 
 
 ------------------
-## CPI and Diesel Fuel Prices
+*NOTES* 
 
-*Proceedures and Background*  
-  - The scripts provided in this repo scrape the following variables (refer to data sources given below)
-    - CPI US 
-    - CPI HI
-    - Diesel fuel US
-    - Diesel fuel HI  
-  - Each script will download the data, clean the data, and produce a final time series plot of each variable of interest and a csv. 
-  - CPI US and both diesel fuel data downloads are self-sufficient, meaning the code will download the data directly from the url within R.  No other procedures are needed to obtain data.  
-  - CPI HI is a little interesting 
-    - CPI HI was taken at the (bi)annual level from 2017 and before.  In 2018 monthly CPI was measured but it was measured every two months.  
-    - I scrape the data table from the bls website for years 2017 and before.  The data scraping tool only will scrape till 2011.  If you need data from 2010 and before, use the file `consumerpriceindex_honolulu_table_2018.xlsx` in the `data` folder. 
-    - In addition, for years where CPI was measured every other month, I impute the missing months using the yearly mean values.  
-
-
-*NOTE* 
-  - bls.gov limits the number of data requests to 500 a day (https://github.com/keberwein/blscrapeR/issues/16) be sure to keep this in mind when querying the data through R.  
-
-------------------
-## Data Sources 
-
-The data sets used are (Given by Jon S.) 
-  - CPI:
-  https://beta.bls.gov/dataQuery/find?fq=survey:%5Bcu%5D&s=popularity:D
-    - We'll want the "all items us city average, all urban consumers, not seasonally adjusted" for 2000 to present.
-
-  - fuel price:
-  https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=pet&s=emd_epd2d_pte_nus_dpg&f=m
-    - Again 2000-present is fine, and we'll want the monthly averages of US no2 diesel prices.
-    
-The data sets used are (Given by Michel) 
-
-  - CPI: (HI CPI - pre 2018, see Minling's reference for updated data set) 
-  https://www.bls.gov/regions/west/data/consumerpriceindex_honolulu_table.pdf
-
-  - fuel price, I used the diesel price from DBEDT (source:  American Automobile Association)
-  https://dbedt.hawaii.gov/economic/energy-trends-2/
-    - Go to website and use the link `Monthly Energy Data: Historical data from January 2006 to January 2021`
-    - This will lead to an xlsx spread sheet.  Navigate to the first tab "State" and use row 18 titled `Diesel, State`
-
-
-The data sets used are (Given my Minling) 
-  - CPI: (HI CPI - post 2018) 
-  https://data.bls.gov/pdq/SurveyOutputServlet
+  - bls.gov limits the number of data requests (https://github.com/keberwein/blscrapeR/issues/16) be sure to keep this in mind when querying the data through R.  
+  - CPI HI 
+     - From 2017 and prior, CPI was measured (bi)annually.  
+     - 2018 to present, bi-monthly CPI is recorded.  
+     - Data from pre-2011 is saved as a pdf file `data/ HI_CPI_pre2011/ consumerpriceindex_honolulu_table_2018.xlsx`. 
+  - Imputting values to obtain a data set at the monthly level can be done upon request.    
 
 
 

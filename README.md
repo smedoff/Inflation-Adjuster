@@ -1,4 +1,5 @@
 # Inflation_Adjuster
+
 The purpose of this repo is to scrape or download the following GDP and CPI data into R.  
 
 Data Sets Produced 
@@ -9,6 +10,7 @@ Data Sets Produced
   - CPI Hawaii
 
 *Directory Structure*
+
   - Run all code by opening to the `Inflation_Adj.Rproj`.  This will help preserve the folder structure when saving and sourcing data and figures. 
   - There are 3 folders in the working directory 
     1. code
@@ -22,6 +24,7 @@ Data Sets Produced
 
 
 *About the Data*
+
 GDP National 
   - https://fred.stlouisfed.org/series/GDPDEF  
   - Data Range: 1947 to present 

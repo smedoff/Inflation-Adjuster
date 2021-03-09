@@ -12,11 +12,14 @@ Data Sets Produced
   - Run all code by opening to the `Inflation_Adj.Rproj`.  This will help preserve the folder structure when saving and sourcing data and figures. 
   - There are 3 folders in the working directory 
     1. code - Two folders 
+    
       a. produce data sets- This folder holds all scripts needed to extract, clean, and save the GDP and CPI data 
       b. supplementary code- The files in the folder
+      
         - compiling_ts_graph.R - Create the final time series graph 
         - hlprfnc_adjusting_CPI.R - Function to calculate the CPI adjuster 
         - example_calc_adj_cpi.R - An example of how to use the CPI adjuster
+        
     3. data - House all final data sets
     5. figures - House the final time series graph
 

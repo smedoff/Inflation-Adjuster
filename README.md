@@ -9,7 +9,7 @@ Data Sets Produced
   - CPI Regional (West) 
   - CPI Hawaii
 
-*Directory Structure*
+##Directory Structure
 
   - Run all code by opening to the `Inflation_Adj.Rproj`.  This will help preserve the folder structure when saving and sourcing data and figures. 
   - There are 3 folders in the working directory 
@@ -23,7 +23,7 @@ Data Sets Produced
     3. figures - House the final time series graph
 
 
-*About the Data*
+##About the Data
 
 GDP National 
   - https://fred.stlouisfed.org/series/GDPDEF  

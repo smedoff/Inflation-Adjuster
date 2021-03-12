@@ -9,6 +9,9 @@ Data Sets Produced
   - CPI Regional (West) 
   - CPI Hawaii
 
+
+![alt text](https://github.com/[SarahWong-NOAA]/[Inflation_Adjuster]/blob/[figures]/Inflation_Adj_TS.png?raw=true)
+
 ## Directory Structure
 
   - Run all code by opening to the `Inflation_Adj.Rproj`.  This will help preserve the folder structure when saving and sourcing data and figures. 

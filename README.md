@@ -9,8 +9,6 @@ Data Sets Produced
   - CPI Regional (West) 
   - CPI Hawaii
 
-
-![alt text](https://github.com/[SarahWong-NOAA]/[Inflation_Adjuster]/blob/[figures]/Inflation_Adj_TS.png?raw=true)
 ![GitHub Logo](/figures/Inflation_Adj_TS.png?raw=true)
 
 ## Directory Structure
